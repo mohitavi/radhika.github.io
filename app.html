@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>LIVERATE</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1, shrink-to-fit=no">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/socket.io.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/custom.js" type="text/javascript"></script>
+    <script src="js/Liverate.js" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.min.Chirayu.js" type="text/javascript"></script>
+    <script src="js/TemplateID.Chirayu.js" type="text/javascript"></script>
+    <script src="js/liverates.Chirayu.js" type="text/javascript"></script>
+    <script src="js/LiveRateMessage.Chirayu.js" type="text/javascript"></script>
+    <script src="js/Spinner.Chirayu.js" type="text/javascript"></script>
+    <script>
+        var tempbottomOfWindow;
+        var something = (function () {
+            var executed = false;
+            return function () {
+                if (!executed) {
+                    executed = true;
+                    tempbottomOfWindow = $(window).scrollTop() + $(window).height();
+                    fnStartClock_0();
+                    CallWebServiceFromJqueryMarquee();
+                    var timerMarquee = setInterval("CallWebServiceFromJqueryMarquee()", 30000);
+                }
+            };
+        })();
+        something();
+    </script>
+    <style>
+        body {
+        background-image: url("images/bg.jpg");
+        background-color: #cccccc;
+        opacity: 1;
+        }
+    </style>    
+</head>
+<body>
+    <div class="main-cover">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 res1">
+                    <div class="c-c">
+                        <marquee  direction="left" style="color: black">Radhika Jewellers - Agra</marquee>
+                        <div id="gvData"> </div>    
+                    </div>
+                </div>              
+                <div class="col-md-12 ">
+                    <div class="c-c">
+                        <div class="m" id="divFutureHd"></div>
+                        <div id="gvData2"> </div>
+                    </div>
+                </div>
+                <div class="col-md-12 ">
+                    <div class="c-c">
+                        <div class="m" id="divSpotHd"></div>
+                        <div id="gvData1"> </div>
+                    </div>
+                </div>
+                <div class="col-md-12 ">
+                    <div class="c-c">
+                        <div class="m" id="divNextHd"></div>
+                        <div class="future" id="divNext"></div>
+			            <marquee  direction="left" style="color: black">Radhika Jewellers - Agra</marquee>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
